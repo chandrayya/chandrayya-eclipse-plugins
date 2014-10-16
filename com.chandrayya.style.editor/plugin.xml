@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar">
+         <toolbar
+               id="com.chandrayya.jdt.custom.editor.toolbar1">
+            <command
+                  commandId="com.chandrayya.jdt.custom.editor.stylecommand"
+                  icon="icons/sample.gif"
+                  label="StyleCommand"
+                  style="toggle"
+                  tooltip="Style code">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="com.chandrayya.jdt.custom.editor.stylecommand"
+            name="Stylecommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.chandrayya.jdt.custom.editor.handler.StyleHandler"
+            commandId="com.chandrayya.jdt.custom.editor.stylecommand">
+      </handler>
+   </extension>
+
+
+</plugin>

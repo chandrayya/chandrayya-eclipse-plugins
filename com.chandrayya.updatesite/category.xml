@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/com.chandrayya.editplusminus.feature_1.0.0.qualifier.jar" id="com.chandrayya.editplusminus.feature" version="1.0.0.qualifier">
+      <category name="editplusminus"/>
+   </feature>
+   <category-def name="editplusminus" label="EditPlusMinus">
+      <description>
+         &lt;category-def name=&quot;editplusminus&quot; label=&quot;EditPlusMinus&quot;/&gt;
+      </description>
+   </category-def>
+</site>

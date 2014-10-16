@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.trim.status">
+         <toolbar
+               id="com.chandrayya.editorstatusbar"
+               label="Editor Status Bar">
+            <control
+                  class="com.chandrayya.editor.info.EditorStatusInfoControlContribution"
+                  id="com.chandrayya.editor.info.EditorStatusInfoControlContribution">
+            </control>
+         </toolbar>         
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:file?after=closeAll">  
+        <separator
+            name="com.chandrayya.menus.separator1"
+            visible="true">
+    	</separator>     
+         <menu
+               id="recentFilesMenu"
+               label="Recent Files">
+            <command
+                  commandId="com.chandrayya.editor.info.commands.recentFiles"
+                  label="Recent Files"
+                  style="push"
+                  tooltip="Show Recent Files">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="com.chandrayya.editor.info.commands"
+            id="com.chandrayya.editor.info.commands.RecentFilesHandler"
+            name="Recent Files">
+      </command>
+   </extension>
+</plugin>
