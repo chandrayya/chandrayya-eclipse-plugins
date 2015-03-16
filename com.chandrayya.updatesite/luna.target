@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?><target name="Running Platform" sequenceNumber="6">
+<locations>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.sdk.examples.source.feature.group" version="3.5.400.v20140925-0400"/>
+<unit id="org.eclipse.osgi.compatibility.plugins.feature.feature.group" version="1.0.0.v20140416-1648"/>
+<unit id="org.eclipse.test.feature.group" version="3.6.100.v20140528-1640"/>
+<unit id="org.eclipse.rcp.source.feature.group" version="4.4.0.v20140925-0400"/>
+<unit id="org.eclipse.sdk.tests.feature.group" version="4.4.0.v20140925-0915"/>
+<unit id="org.eclipse.rcp.feature.group" version="4.4.0.v20140925-0400"/>
+<unit id="org.eclipse.sdk.ide" version="4.4.1.M20140925-0400"/>
+<repository location="http://download.eclipse.org/eclipse/updates/4.4"/>
+</location>
+</locations>
+<environment>
+<os>linux</os>
+<ws>gtk</ws>
+<arch>x86_64</arch>
+<nl>en_IN</nl>
+</environment>
+<launcherArgs>
+<vmArgs>-Dosgi.requiredJavaVersion=1.7 -XX:MaxPermSize=256m -Xms40m -Xmx2048m</vmArgs>
+</launcherArgs>
+</target>

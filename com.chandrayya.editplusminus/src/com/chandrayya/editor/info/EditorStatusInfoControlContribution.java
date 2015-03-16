@@ -48,7 +48,7 @@ import org.eclipse.ui.services.IServiceLocator;
 import org.eclipse.ui.texteditor.IDocumentProvider;
 import org.eclipse.ui.texteditor.ITextEditor;
 
-public class EditorStatusInfoControlContribution extends WorkbenchWindowControlContribution implements ISelectionListener {
+public class EditorStatusInfoControlContribution extends WorkbenchWindowControlContribution {
 
     private Label sel;
     private Label chars;
@@ -58,6 +58,7 @@ public class EditorStatusInfoControlContribution extends WorkbenchWindowControlC
     private final String CHARS = "Chars:";
     private final String LINES = "Lines:";
     private Clipboard cb;
+    private ISelectionListener iSelListener;
 
     public EditorStatusInfoControlContribution() {
     }
@@ -76,6 +77,7 @@ public class EditorStatusInfoControlContribution extends WorkbenchWindowControlC
         container.setLayout(glContainer);
         GridData layoutData = new GridData();
         layoutData.widthHint = 100;
+        addSelectionListerner();
         MouseListener listener = new MouseListener() {
 
             @Override
@@ -149,10 +151,8 @@ public class EditorStatusInfoControlContribution extends WorkbenchWindowControlC
         sel.setLayoutData(layoutData);
 
         IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-        activeWorkbenchWindow.getSelectionService().addSelectionListener(this);
-
         IEditorPart ed = activeWorkbenchWindow.getActivePage().getActiveEditor();
-
+        PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService().addSelectionListener(iSelListener);
         if (ed instanceof ITextEditor) {
             ITextEditor iTextEditor = (ITextEditor)ed;
 
@@ -221,24 +221,36 @@ public class EditorStatusInfoControlContribution extends WorkbenchWindowControlC
         return container;
     }
 
-    @Override
-    public void selectionChanged(IWorkbenchPart arg0, ISelection arg1) {
-        if (arg1 instanceof ITextSelection) {
-            ITextSelection sele = (ITextSelection)arg1;
-            if (sele.getLength() > 0) {
-                String textData = sele.getText();
-                TextTransfer textTransfer = TextTransfer.getInstance();
-                cb.setContents(new Object[] { textData }, new Transfer[] { textTransfer });
+    private void addSelectionListerner() {
+        iSelListener = new ISelectionListener() {
+            @Override
+            public void selectionChanged(IWorkbenchPart sourcepart, ISelection selection) {
+                if (selection instanceof ITextSelection) {
+                    ITextSelection sele = (ITextSelection)selection;
+                    if (sele.getLength() > 0) {
+                        String textData = sele.getText();
+                        TextTransfer textTransfer = TextTransfer.getInstance();
+                        cb.setContents(new Object[] { textData }, new Transfer[] { textTransfer });
 
-                sel.setText(SEL + Integer.toString(sele.getLength()) + "|" + (sele.getEndLine() - sele.getStartLine() + 1));
+                        sel.setText(SEL + Integer.toString(sele.getLength()) + "|"
+                                + (sele.getEndLine() - sele.getStartLine() + 1));
 
+                    }
+
+                }
             }
-        }
+        };
     }
 
     private void resetAll() {
         sel.setText("");
         lines.setText("");
         chars.setText("");
+    }
+
+    @Override
+    public void dispose() {
+        PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService().removeSelectionListener(iSelListener);
+        super.dispose();
     }
 }

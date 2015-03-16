@@ -16,6 +16,8 @@
     <module>../com.chandrayya.search</module>       
     <module>../com.chandrayya.style.editor</module>
     <module>../com.chandrayya.updatesite</module>
+    <module>../com.chandrayya.product.feature</module>
+    <module>../com.chandrayya.product</module>
   </modules>  
   <repositories>
     <repository>
@@ -24,7 +26,7 @@
       <url>${eclipse-url}</url>
     </repository>
   </repositories>
-  <build>  
+  <build> 
   <plugins>
   	<plugin>
   		<groupId>org.eclipse.tycho</groupId>
@@ -69,7 +71,7 @@
      <groupId>org.eclipse.tycho</groupId>  
      <artifactId>tycho-versions-plugin</artifactId>  
      <version>${tycho-version}</version>  
-    </plugin>
+    </plugin>    
     <plugin>
         <artifactId>maven-resources-plugin</artifactId>        
         <executions>
