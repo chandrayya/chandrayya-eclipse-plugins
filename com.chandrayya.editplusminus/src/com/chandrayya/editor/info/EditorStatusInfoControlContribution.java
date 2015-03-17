@@ -109,16 +109,12 @@ public class EditorStatusInfoControlContribution extends WorkbenchWindowControlC
                 try {
                     command.executeWithChecks(new ExecutionEvent());
                 } catch (ExecutionException e1) {
-                    // TODO Auto-generated catch block
                     e1.printStackTrace();
                 } catch (NotDefinedException e1) {
-                    // TODO Auto-generated catch block
                     e1.printStackTrace();
                 } catch (NotEnabledException e1) {
-                    // TODO Auto-generated catch block
                     e1.printStackTrace();
                 } catch (NotHandledException e1) {
-                    // TODO Auto-generated catch block
                     e1.printStackTrace();
                 }
 
