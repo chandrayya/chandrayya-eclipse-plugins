@@ -1,0 +1,2 @@
+sudo ./pushToBintray.sh chandrayya 2b9b7b72ca48f2792337ce8a6e61a2b2298b82d0 chandrayya chandrayya-plugins updates 1.0 http://dl.bintchandrayya-pluginsray.com/chandrayya/chandrayya-plugins/
+
