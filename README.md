@@ -1,8 +1,6 @@
 # chandrayya-eclipse-plugins
-Automatically exported from code.google.com/p/chandrayya-eclipse-plugins
-This is read me.
 
-<a id="user-content-installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+<h2>Installation</h2>
 
 <p>Install from source. Requires the use of the Eclipse Plug-in Development Tools.</p>
 
