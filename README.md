@@ -16,10 +16,12 @@ A) Install from source.
 </ul>
 
 B) Install from command line
+<code>
 git clone https://github.com/chandrayya/chandrayya-eclipse-plugins.git
 cd com.chandrayya.master
 mvn clean install
 cd chandrayya-eclipse-plugins/com.chandrayya.updatesite/target/repository
+</code>
 Confirm if updatesite site is generated.
 
 Open eclipse click Help > Install New software
@@ -28,6 +30,7 @@ Click Add button. In the Add repository dialog click Local button and select "<C
 Further follow the instructions in update wizard.
 
 C) Download update site archive
+
 Download updatesite archive file (chandrayya-plugins-<Timestamp>.zip)from here
 https://drive.google.com/open?id=0B3pxBGD-v-ycdXVIRkttemdTOU0&authuser=0
 
