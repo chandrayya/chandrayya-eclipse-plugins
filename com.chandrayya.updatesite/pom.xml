@@ -11,7 +11,7 @@
 	</parent>
 	<properties>
 		<timestamp>${maven.build.timestamp}</timestamp>
-		<maven.build.timestamp.format>yyyyMMddHHmm</maven.build.timestamp.format>		
+		<maven.build.timestamp.format>yyyyMMddHHmm</maven.build.timestamp.format>
 		<noc2keep>3</noc2keep>
 	</properties>
 	<build>
@@ -46,11 +46,11 @@
 					<execution>
 						<phase>install</phase>
 						<configuration>
-							<target name="copy zip file to drive" if="${copy2drive}">
+							<target name="copy zip file to drive" if="${copy2drive}">								
 								<echo message="Copying zip file to drive" />
 								<copy
 									file="${project.build.directory}/${project.name}-${project.version}.zip"
-									tofile="${p2folder}/chandrayya-plugins-${maven.build.timestamp}.zip" />
+									tofile="${p2folder}/chandrayya-plugins-${maven.build.timestamp}.zip" />								
 								<mkdir dir="${user.home}/.ant/lib" />
 								<get dest="${user.home}/.ant/lib/ant-contrib.jar"
 									src="http://search.maven.org/remotecontent?filepath=ant-contrib/ant-contrib/1.0b3/ant-contrib-1.0b3.jar"
