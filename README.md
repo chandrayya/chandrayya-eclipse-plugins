@@ -16,12 +16,13 @@ A) Install from source.
 </ul>
 
 B) Install from command line
-<code>
+
+<pre>
 git clone https://github.com/chandrayya/chandrayya-eclipse-plugins.git
 cd com.chandrayya.master
 mvn clean install
 cd chandrayya-eclipse-plugins/com.chandrayya.updatesite/target/repository
-</code>
+</pre>
 Confirm if updatesite site is generated.
 
 Open eclipse click Help > Install New software
