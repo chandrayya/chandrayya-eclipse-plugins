@@ -20,19 +20,22 @@ import org.eclipse.ui.part.FileEditorInput;
 
 public class GetEditorDetails {
 
-    public String getDetails() {
-        StringBuffer details = new StringBuffer();
-        IEditorPart edi = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
-        FileEditorInput file = (FileEditorInput)edi.getEditorInput();
-        details.append("Encoding: ");
-        File mm = file.getPath().toFile();
-        try {
-            details.append(file.getFile().getCharset());
-        } catch (CoreException e) {
-            e.printStackTrace();
-        }
-        details.append("\nLast Modified: ");
-        details.append(mm.lastModified());
-        return details.toString();
-    }
+	public String getDetails() {
+		StringBuffer details = new StringBuffer();
+		IEditorPart edi = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
+				.getActivePage().getActiveEditor();
+		FileEditorInput file = (FileEditorInput) edi.getEditorInput();
+		details.append("Encoding: ");
+		File mm = file.getPath().toFile();
+		try {
+			details.append(file.getFile().getCharset());
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
+		details.append("\nLast Modified: ");
+		details.append(mm.lastModified());
+		File fl = new File(file.getFile().getRawLocation().toOSString());
+		details.append("\nFile Size:  " + fl.length());
+		return details.toString();
+	}
 }

@@ -43,4 +43,12 @@
             name="Recent Files">
       </command>
    </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+          <page
+			class="com.chandrayya.editor.info.preferences.ChandrayyaPluginsPreferencePage"
+			id="com.chandrayya.editor.info.preferences.ChandrayyaPluginsPreferencePage"
+			name="Chandrayya Plugins">
+		  </page>
+   </extension>
 </plugin>
