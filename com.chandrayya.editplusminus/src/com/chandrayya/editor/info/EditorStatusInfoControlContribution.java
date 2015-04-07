@@ -1,7 +1,4 @@
 /*******************************************************************************
- * Copyright (c) 2014 Chandrayya G K
- * All rights reserved.
- *
  * This component and the accompanying materials are made available
  * under the terms of the "Eclipse Public License v1.0"
  * which is available at the URL "http://www.eclipse.org/legal/epl-v10.html".
@@ -166,6 +163,23 @@ public class EditorStatusInfoControlContribution extends
 								lines.setText(LINES
 										+ Integer.toString(doc
 												.getNumberOfLines()));
+								doc.addDocumentListener(new IDocumentListener() {
+									@Override
+									public void documentChanged(
+											DocumentEvent event) {
+										chars.setText(CHARS
+												+ Integer.toString(doc
+														.getLength()));
+										lines.setText(LINES
+												+ Integer.toString(doc
+														.getNumberOfLines()));
+									}
+
+									@Override
+									public void documentAboutToBeChanged(
+											DocumentEvent event) {
+									}
+								});
 							}
 						}
 					}

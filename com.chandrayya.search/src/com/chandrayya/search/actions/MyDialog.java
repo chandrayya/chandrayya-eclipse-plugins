@@ -1,6 +1,4 @@
 /*******************************************************************************
- * Copyright (c) 2014 Chandrayya G K
- * All rights reserved.
  *
  * This component and the accompanying materials are made available
  * under the terms of the "Eclipse Public License v1.0"
@@ -32,65 +30,70 @@ import org.eclipse.ui.ide.ResourceUtil;
 @SuppressWarnings("restriction")
 public class MyDialog extends SearchDialog {
 
-    public MyDialog(IWorkbenchWindow window, String pageId) {
-        super(window, pageId);
-    }
+	public MyDialog(IWorkbenchWindow window, String pageId) {
+		super(window, pageId);
+	}
 
-    @Override
-    protected Control createPageArea(Composite parent) {
-        return super.createPageArea(parent);
-    }
+	@Override
+	protected Control createPageArea(Composite parent) {
+		return super.createPageArea(parent);
+	}
 
-    @Override
-    protected Control createDialogArea(Composite parent) {
-        Composite compo = (Composite)super.createDialogArea(parent);
-        Control[] childs = compo.getChildren();
-        Control[] fdf = ((Composite)childs[0]).getChildren();
-        TabFolder tab = (TabFolder)fdf[0];
-        Control[] kj = tab.getChildren();
-        Composite klo = (Composite)kj[0];
-        Control[] kloi = klo.getChildren();
-        Composite juh = (Composite)kloi[1];
-        Control[] l3 = juh.getChildren();
-        Group hy = (Group)l3[0];
+	@Override
+	protected Control createDialogArea(Composite parent) {
+		Composite compo = (Composite) super.createDialogArea(parent);
+		Control[] childs = compo.getChildren();
+		Control[] fdf = ((Composite) childs[0]).getChildren();
+		TabFolder tab = (TabFolder) fdf[0];
+		Control[] kj = tab.getChildren();
+		Composite klo = (Composite) kj[0];
+		Control[] kloi = klo.getChildren();
+		Composite juh = (Composite) kloi[1];
+		Control[] l3 = juh.getChildren();
+		Group hy = (Group) l3[0];
 
-        Button but = new Button(hy, SWT.RADIO);
-        but.setText("Search In Open Files");
-        return compo;
-    }
+		Button but = new Button(hy, SWT.RADIO);
+		but.setText("Search In Open Files");
+		return compo;
+	}
 
-    @Override
-    protected void buttonPressed(int buttonId) {
-        if (buttonId == SearchDialog.OK) {
-            IEditorReference[] openEditors = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
-                    .getEditorReferences();
-            IFile[] files = new IFile[openEditors.length];
-            for (int i = 0; i < openEditors.length; i++) {
-                try {
-                    files[i] = ResourceUtil.getFile(openEditors[i].getEditorInput());
-                } catch (PartInitException e) {
-                    e.printStackTrace();
-                }
-            }
-            IViewPart nave = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
-                    .findView("org.eclipse.ui.views.ResourceNavigator");
-            TreeViewer viewer = (TreeViewer)nave.getSite().getSelectionProvider();
-            viewer.setSelection(new StructuredSelection(files));
-            try {
-                PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
-                        .showView("org.eclipse.ui.views.ResourceNavigator");
-            } catch (PartInitException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-            setSelectedScope(ISearchPageContainer.SELECTION_SCOPE);
-            super.buttonPressed(buttonId);
-        }
-    }
+	@Override
+	protected void buttonPressed(int buttonId) {
+		if (buttonId == SearchDialog.OK) {
+			IEditorReference[] openEditors = PlatformUI.getWorkbench()
+					.getActiveWorkbenchWindow().getActivePage()
+					.getEditorReferences();
+			IFile[] files = new IFile[openEditors.length];
+			for (int i = 0; i < openEditors.length; i++) {
+				try {
+					files[i] = ResourceUtil.getFile(openEditors[i]
+							.getEditorInput());
+				} catch (PartInitException e) {
+					e.printStackTrace();
+				}
+			}
+			IViewPart nave = PlatformUI.getWorkbench()
+					.getActiveWorkbenchWindow().getActivePage()
+					.findView("org.eclipse.ui.views.ResourceNavigator");
+			TreeViewer viewer = (TreeViewer) nave.getSite()
+					.getSelectionProvider();
+			viewer.setSelection(new StructuredSelection(files));
+			try {
+				PlatformUI.getWorkbench().getActiveWorkbenchWindow()
+						.getActivePage()
+						.showView("org.eclipse.ui.views.ResourceNavigator");
+			} catch (PartInitException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			setSelectedScope(ISearchPageContainer.SELECTION_SCOPE);
+			super.buttonPressed(buttonId);
+		}
+	}
 
-    @Override
-    protected Control createContents(Composite parent) {
-        return super.createContents(parent);
-    }
+	@Override
+	protected Control createContents(Composite parent) {
+		return super.createContents(parent);
+	}
 
 }

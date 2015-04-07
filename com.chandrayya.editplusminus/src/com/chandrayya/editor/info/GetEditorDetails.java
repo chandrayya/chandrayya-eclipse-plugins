@@ -1,6 +1,4 @@
 /*******************************************************************************
- * Copyright (c) 2014 Chandrayya G K
- * All rights reserved.
  *
  * This component and the accompanying materials are made available
  * under the terms of the "Eclipse Public License v1.0"
@@ -12,6 +10,7 @@
 package com.chandrayya.editor.info;
 
 import java.io.File;
+import java.text.DateFormat;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.ui.IEditorPart;
@@ -33,7 +32,9 @@ public class GetEditorDetails {
 			e.printStackTrace();
 		}
 		details.append("\nLast Modified: ");
-		details.append(mm.lastModified());
+		DateFormat format = DateFormat.getDateTimeInstance(DateFormat.LONG,
+				DateFormat.MEDIUM);
+		details.append(format.format(mm.lastModified()));
 		File fl = new File(file.getFile().getRawLocation().toOSString());
 		details.append("\nFile Size:  " + fl.length());
 		return details.toString();

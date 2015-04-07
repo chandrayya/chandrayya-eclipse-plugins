@@ -1,6 +1,4 @@
 /*******************************************************************************
- * Copyright (c) 2014 Chandrayya G K
- * All rights reserved.
  *
  * This component and the accompanying materials are made available
  * under the terms of the "Eclipse Public License v1.0"
@@ -19,13 +17,14 @@ import org.eclipse.ui.handlers.HandlerUtil;
 
 public class RecentFilesHandler extends AbstractHandler {
 
-    /**
-     * Default handler
-     */
-    @Override
-    public Object execute(ExecutionEvent event) throws ExecutionException {
-        IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
-        System.out.println("Recent files clicked");
-        return null;
-    }
+	/**
+	 * Default handler
+	 */
+	@Override
+	public Object execute(ExecutionEvent event) throws ExecutionException {
+		IWorkbenchWindow window = HandlerUtil
+				.getActiveWorkbenchWindowChecked(event);
+		System.out.println("Recent files clicked");
+		return null;
+	}
 }
