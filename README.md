@@ -46,4 +46,10 @@ Further follow the instructions in update wizard.
 <li>Automatically copies the selected text to clipboard</li>
 By default autocopy is switched off. Enable this option in `Windows > Preferences > Chandrayya Plugins`
 <li>Shows total number of lines, charecters, selected lines, selected charecters, file size of a opened file in status bar
+<br><br>
+![File Details](com.chandrayya.product/screenshots/FileDetaisInStatusBar.png)
+<br><br>
+Double clicking on the status bar will do file details
+<br><br>
+![File Details](com.chandrayya.product/screenshots/FileDetails.png)
 </ul>
