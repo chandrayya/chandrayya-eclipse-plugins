@@ -47,9 +47,9 @@ Further follow the instructions in update wizard.
 By default autocopy is switched off. Enable this option in `Windows > Preferences > Chandrayya Plugins`
 <li>Shows total number of lines, charecters, selected lines, selected charecters, file size of a opened file in status bar
 <br><br>
-![File Details](com.chandrayya.product/screenshots/FileDetaisInStatusBar.png)
+![File Details In Status Bar](com.chandrayya.product/screenshots/FileDetaisInStatusBar.png)
 <br><br>
 Double clicking on the status bar will do file details
 <br><br>
-![File Details](com.chandrayya.product/screenshots/FileDetails.png)
+![File Details Popup](com.chandrayya.product/screenshots/FileDetails.png)
 </ul>
