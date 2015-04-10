@@ -40,16 +40,14 @@ Click Add button. In the Add repository dialog click Archive button and select t
 
 Further follow the instructions in update wizard.
 
-<h2>Features</h2>
-<h3>Edit Plus Minus</h3>
-<ul>
-<li>Automatically copies the selected text to clipboard</li>
+#Features
+#Edit Plus Minus
+*Automatically copies the selected text to clipboard
 By default autocopy is switched off. Enable this option in `Windows > Preferences > Chandrayya Plugins`
-<li>Shows total number of lines, charecters, selected lines, selected charecters, file size of a opened file in status bar
+*Shows total number of lines, charecters, selected lines, selected charecters, file size of a opened file in status bar
 <br><br>
 ![File Details In Status Bar](com.chandrayya.product/screenshots/FileDetaisInStatusBar.png)
 <br><br>
 Double clicking on the status bar will do file details
 <br><br>
-![File Details Popup](com.chandrayya.product/screenshots/FileDetails.png)
-</ul>
+![File Details Popup](/com.chandrayya.product/screenshots/FileDetails.png)
