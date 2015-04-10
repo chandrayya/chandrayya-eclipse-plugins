@@ -22,14 +22,7 @@ public class Activator extends AbstractUIPlugin {
 	public static final String PLUGIN_ID = "com.chandrayya.search"; //$NON-NLS-1$
 
 	// The shared instance
-	private static Activator plugin;
-
-	String fde = "OPTIONAL MATCH (update:UPDATE {name: {name}}),"
-			+ "fdf"
-			+ "fdfd"
-			+ "fff"
-			+ "(update)-[:INSTALLED_IN]->(installation)<-[:CURRENT]-(computer:COMPUTER {name: {computerName}})"
-			+ "RETURN update, installation, computer";
+	private static Activator plugin;	
 
 	/**
 	 * The constructor
