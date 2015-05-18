@@ -34,13 +34,40 @@
             </command>
          </menu>
       </menuContribution>
+      <menuContribution            
+            locationURI="popup:#TextEditorContext?after=additions">              
+        <separator
+            name="com.chandrayya.menus.separator1"
+            visible="true">
+    	</separator>  
+    	 <command
+                  commandId="com.chandrayya.editor.info.commands.insertdatetime"
+                  label="Insert DateTime"
+                  style="push"
+                  tooltip="Insert date and time at cursor">
+         </command>        
+      </menuContribution>
    </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.chandrayya.editor.info.commands.insertdatetime"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M2+M1+D">
+      </key>  
+   </extension>   
    <extension
          point="org.eclipse.ui.commands">
       <command
-            defaultHandler="com.chandrayya.editor.info.commands"
-            id="com.chandrayya.editor.info.commands.RecentFilesHandler"
+            defaultHandler="com.chandrayya.editor.info.commands.RecentFilesHandler"
+            id="com.chandrayya.editor.info.commands.recentFiles"
             name="Recent Files">
+      </command>
+      <command
+            defaultHandler="com.chandrayya.editor.info.commands.InsertDateTimeHandler"
+            id="com.chandrayya.editor.info.commands.insertdatetime"
+            name="Insert DateTime">
       </command>
    </extension>
    <extension
@@ -50,5 +77,5 @@
 			id="com.chandrayya.editor.info.preferences.ChandrayyaPluginsPreferencePage"
 			name="Chandrayya Plugins">
 		  </page>
-   </extension>
+   </extension>   
 </plugin>
