@@ -51,3 +51,5 @@ By default autocopy is switched off. Enable this option in `Windows > Preference
 Double clicking on the status bar will popup a dialog with more file details
 <br><br>
 ![File Details Popup](/com.chandrayya.product/screenshots/FileDetails.png)
+* Insert current date and time at cursor<br>
+  Press <kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <kbd>D</kbd> or right click on any text editor and select "Insert DateTime" option. You can adjust date and time format in `Windows > Preferences > Chandrayya Plugins`. Format reference http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
