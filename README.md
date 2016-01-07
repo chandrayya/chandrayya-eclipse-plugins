@@ -23,7 +23,7 @@ cd com.chandrayya.master
 mvn clean install
 cd chandrayya-eclipse-plugins/com.chandrayya.updatesite/target/repository
 </pre>
-Confirm if updatesite site is generated.
+Verify if updatesite site is generated.
 
 Open eclipse click Help > Install New software
 Click Add button. In the Add repository dialog click Local button and select "<Cloned folder>/chandrayya-eclipse-plugins/com.chandrayya.updatesite/target/repository"
